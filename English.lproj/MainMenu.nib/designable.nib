@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <window title="MacSaber" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="21" userLabel="MacSaber Control">
+            <windowStyleMask key="styleMask" titled="YES" miniaturizable="YES" texturedBackground="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="381" y="457" width="251" height="147"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+            <view key="contentView" id="2">
+                <rect key="frame" x="0.0" y="0.0" width="251" height="147"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField toolTip="Roll value" verticalHuggingPriority="750" id="210">
+                        <rect key="frame" x="120" y="110" width="49" height="17"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="..." id="307">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField toolTip="Speed" verticalHuggingPriority="750" id="212">
+                        <rect key="frame" x="120" y="60" width="49" height="17"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="..." id="308">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button toolTip="Start/Stop your MacSaber" verticalHuggingPriority="750" imageHugsTitle="YES" id="227">
+                        <rect key="frame" x="20" y="19" width="211" height="27"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <buttonCell key="cell" type="squareTextured" title="Saber" bezelStyle="texturedSquare" alignment="center" state="on" borderStyle="border" inset="2" id="309">
+                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                        </buttonCell>
+                        <connections>
+                            <action selector="check:" target="218" id="228"/>
+                        </connections>
+                    </button>
+                    <textField toolTip="Acceleration" verticalHuggingPriority="750" id="240">
+                        <rect key="frame" x="171" y="60" width="37" height="17"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" id="310">
+                            <font key="font" metaFont="system"/>
+                            <string key="title">...
+</string>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" id="241">
+                        <rect key="frame" x="171" y="110" width="37" height="17"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" id="311">
+                            <font key="font" metaFont="system"/>
+                            <string key="title">...
+</string>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField toolTip="Tilt value" verticalHuggingPriority="750" id="256">
+                        <rect key="frame" x="120" y="85" width="49" height="17"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="..." id="312">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" id="257">
+                        <rect key="frame" x="171" y="85" width="37" height="17"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" id="313">
+                            <font key="font" metaFont="system"/>
+                            <string key="title">...
+</string>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" id="268">
+                        <rect key="frame" x="20" y="110" width="95" height="13"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" id="314">
+                            <font key="font" metaFont="label"/>
+                            <string key="title">Roll:
+</string>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" id="270">
+                        <rect key="frame" x="20" y="60" width="95" height="13"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" id="316">
+                            <font key="font" metaFont="label"/>
+                            <string key="title">Force:
+</string>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" id="269">
+                        <rect key="frame" x="20" y="85" width="95" height="13"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" id="315">
+                            <font key="font" metaFont="label"/>
+                            <string key="title">Tilt:
+</string>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                </subviews>
+            </view>
+        </window>
+        <menu title="MainMenu" systemMenu="main" id="29" userLabel="MainMenu">
+            <items>
+                <menuItem title="MacSaber" id="56">
+                    <menu key="submenu" title="MacSaber" systemMenu="apple" id="57">
+                        <items>
+                            <menuItem title="About MacSaber" id="58">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="orderFrontStandardAboutPanel:" target="-2" id="142"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Check for Updates..." id="263">
+                                <connections>
+                                    <action selector="checkForUpdates:" target="218" id="291"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Debug Output" keyEquivalent="d" id="279">
+                                <connections>
+                                    <action selector="debug:" target="218" id="290"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="144">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Hide MacSaber" keyEquivalent="h" id="134">
+                                <connections>
+                                    <action selector="hide:" target="-2" id="152"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Hide Others" keyEquivalent="h" id="145">
+                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                <connections>
+                                    <action selector="hideOtherApplications:" target="-2" id="146"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Show All" id="150">
+                                <connections>
+                                    <action selector="unhideAllApplications:" target="-2" id="153"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="149">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Quit MacSaber" keyEquivalent="q" id="136">
+                                <connections>
+                                    <action selector="terminate:" target="-2" id="139"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Help" id="103">
+                    <menu key="submenu" title="Help" id="106">
+                        <items>
+                            <menuItem title="How do I shot saber?" keyEquivalent="?" toolTip="If you click this, you will probaby see a result you weren't expecting." id="111">
+                                <connections>
+                                    <action selector="hideOtherApplications:" target="-1" id="238"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+            </items>
+        </menu>
+        <customObject id="218" userLabel="MacSaber" customClass="MacSaber">
+            <connections>
+                <outlet property="debugBox" destination="294" id="300"/>
+                <outlet property="debugPane" destination="292" id="303"/>
+                <outlet property="f1" destination="210" id="219"/>
+                <outlet property="f1b" destination="241" id="246"/>
+                <outlet property="f2" destination="256" id="260"/>
+                <outlet property="f2b" destination="257" id="261"/>
+                <outlet property="f3" destination="212" id="221"/>
+                <outlet property="f3b" destination="240" id="247"/>
+                <outlet property="lbl1" destination="268" id="271"/>
+                <outlet property="lbl2" destination="269" id="272"/>
+                <outlet property="lbl3" destination="270" id="273"/>
+                <outlet property="presButan" destination="227" id="229"/>
+                <outlet property="reportButton" destination="296" id="305"/>
+            </connections>
+        </customObject>
+        <window title="Debug" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="292" userLabel="debugWindow" customClass="NSPanel">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" utility="YES" texturedBackground="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="396" y="305" width="251" height="199"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+            <view key="contentView" id="293">
+                <rect key="frame" x="0.0" y="0.0" width="251" height="199"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField verticalHuggingPriority="750" id="294">
+                        <rect key="frame" x="20" y="59" width="211" height="120"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textFieldCell key="cell" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" alignment="center" drawsBackground="YES" id="317">
+                            <font key="font" metaFont="system"/>
+                            <string key="title">Debug Output Pane
+</string>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </textFieldCell>
+                    </textField>
+                    <button toolTip="Report problems with MacSaber" verticalHuggingPriority="750" imageHugsTitle="YES" id="296">
+                        <rect key="frame" x="20" y="25" width="211" height="27"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <buttonCell key="cell" type="squareTextured" title="Report" bezelStyle="texturedSquare" alignment="center" state="on" borderStyle="border" inset="2" id="318">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                        </buttonCell>
+                        <connections>
+                            <action selector="report:" target="218" id="304"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+        </window>
+    </objects>
+</document>
