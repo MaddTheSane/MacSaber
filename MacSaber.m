@@ -6,7 +6,7 @@
 @implementation MacSaber
 -(id)init
 {
-	srandom(time(NULL));
+	srandom(time(NULL) & 0x7fffffff);
 	going = TRUE;
 	error = FALSE;
 	reportEnabled = TRUE;
@@ -31,7 +31,7 @@
 	
 	NSString *macTypeName;
 	Gestalt('mnam', &macTypeCName);
-	macTypeName = [[[NSString alloc] initWithCString:macTypeCName] autorelease];
+	macTypeName = [[[NSString alloc] initWithCString:macTypeCName encoding:NSMacOSRomanStringEncoding] autorelease];
 	
 	structSize = 57;
 	
@@ -87,7 +87,7 @@
 	NSMutableString *urltext = [[NSMutableString alloc] initWithString:@"mailto:macsaber-reports@isnoop.net?subject=MacSaber%20Error%20Report&body="];
 	[urltext appendString:[debugBoxValue stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]];
 
-	NSLog(urltext);
+	NSLog(@"%@", urltext);
 	url = [NSURL URLWithString:urltext];
 	assert(url != nil);
 	(void) [[NSWorkspace sharedWorkspace] openURL:url];
@@ -110,7 +110,7 @@
 		return;
 	if(going == FALSE)	
 	{	
-		[[NSSound soundNamed:[NSString stringWithFormat:@"on%d",`()%sOn]] play];
+		[[NSSound soundNamed:[NSString stringWithFormat:@"on%d",random()%sOn]] play];
 		going = TRUE;
 		timer = [[NSTimer scheduledTimerWithTimeInterval:0.1
 																target:self
@@ -167,9 +167,9 @@
 
 	mult = macType == MACBOOK ? 1 : 2.3;
 	
-	NSMutableString *rollDir;
+	NSString *rollDir;
 	
-	result = getMotion(macType,structSize,&gyro);
+	result = getMotion(macType,structSize,gyro);
 
 	if(firstRun == TRUE)
 	{
@@ -182,7 +182,7 @@
 		{
 			
 			[debugBox setStringValue:[NSString stringWithFormat:@"Version: %@\nSMS Error: %d\n%s\nClass: %d",myVersion,result,macTypeCName+1,macType]];
-			NSLog(reportData);
+			NSLog(@"%@", reportData);
 			[idle invalidate];
 			[idle release];
 			[timer invalidate];
@@ -308,8 +308,8 @@
 													defaultButton:@"Ignore"
 												 alternateButton:(downloadURL) ? @"Download" : @""
 													  otherButton:nil
-									informativeTextWithFormat:[NSString stringWithFormat:@"A newer version of this application is available (%@)", currentVersion]];
-		int result = [alert runModal];
+									informativeTextWithFormat:@"A newer version of this application is available (%@)", currentVersion];
+		NSModalResponse result = [alert runModal];
 		if (result == NSAlertAlternateReturn) {
 			[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:downloadURL]];
 		} else {
@@ -322,7 +322,7 @@
 													defaultButton:@"Hooray!"
 												 alternateButton:nil
 													  otherButton:nil
-									informativeTextWithFormat:[NSString stringWithFormat:@"You have the latest version available (%@)", currentVersion]];
+									informativeTextWithFormat:@"You have the latest version available (%@)", currentVersion];
 		[alert runModal];
 	} else {
 		
@@ -330,8 +330,8 @@
 													defaultButton:@"Ignore"
 												 alternateButton:(downloadURL) ? @"Download" : @""
 													  otherButton:nil
-									informativeTextWithFormat:[NSString stringWithFormat:@"You are running %@.\nThe latest public release is %@.", myVersion, currentVersion]];
-		int result = [alert runModal];
+									informativeTextWithFormat:@"You are running %@.\nThe latest public release is %@.", myVersion, currentVersion];
+		NSModalResponse result = [alert runModal];
 		if (result == NSAlertAlternateReturn) {
 			[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:downloadURL]];
 		} else {
@@ -339,7 +339,7 @@
 		}
 		
 	}
-	NSLog([NSString stringWithFormat:@"ID: %@\nLatest: %@\nYours: %@\n", ident, currentVersion, myVersion]);
+	NSLog(@"ID: %@\nLatest: %@\nYours: %@\n", ident, currentVersion, myVersion);
 }
 
 @end

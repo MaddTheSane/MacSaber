@@ -48,6 +48,7 @@
 #include <unistd.h>
 #include <IOKit/IOKitLib.h>
 #include "defines.c"
+#include <alloca.h>
 
 
 int getMotion(int macType, int structSize, int *values)
@@ -56,7 +57,7 @@ int getMotion(int macType, int structSize, int *values)
 		char x;
 		char y;
 		char z;
-		char pad[structSize];
+		char pad[];
 	};	
 	
 	int kernFunc;
@@ -71,8 +72,8 @@ int getMotion(int macType, int structSize, int *values)
 	IOItemCount structureInputSize;
 	IOByteCount structureOutputSize;
 	
-	struct data inputStructure;
-	struct data outputStructure;
+	struct data *inputStructure = alloca(sizeof(struct data) + structSize);
+	struct data *outputStructure = alloca(sizeof(struct data) + structSize);
 	
 	result = IOMasterPort(MACH_PORT_NULL, &masterPort);
 	switch(macType)
@@ -101,7 +102,7 @@ int getMotion(int macType, int structSize, int *values)
 	
 	if (result != KERN_SUCCESS)
 	{
-		fputs(sprintf("IO Server '%s' returned error.\n",servMatch), stderr);
+		printf("IO Server '%s' returned error.\n",servMatch);
 		return -1;
 	}
 	
@@ -142,9 +143,9 @@ int getMotion(int macType, int structSize, int *values)
 		puts("no coords");
 		return -4;
 	} else {
-		values[0] = outputStructure.x;
-		values[1] = outputStructure.y;
-		values[2] = outputStructure.z;
+		values[0] = outputStructure->x;
+		values[1] = outputStructure->y;
+		values[2] = outputStructure->z;
 	}
 	
 	IOServiceClose(dataPort);
